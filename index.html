@@ -23,10 +23,11 @@
       <nav class="nav" id="nav">
           <a href="#about">Tentang</a>
           <a href="#services">Layanan</a>
-          <a href="#team">Tim</a>
+          <a href="#location">Lokasi</a>
+          <a href="#booking">Booking</a>
       </nav>
 
-      <a href="#contact" class="header-cta">
+      <a href="#booking" class="header-cta">
           Konsultasi
       </a>
 
@@ -55,7 +56,7 @@
               <span>✓ Respons Cepat</span>
           </div>
 
-          <a href="#" class="hero-btn">
+          <a href="#booking" class="hero-btn">
               Jadwalkan Konsultasi
           </a>
       </div>
@@ -63,7 +64,7 @@
   </div>
 </section>
 
-<section id="about" class="about-section">
+<section id="about" class="about-section reveal">
   <div class="container about-wrapper">
 
       <div class="about-text">
@@ -95,10 +96,10 @@
   </div>
 </section>
 
-<section id="services" class="section dark">
+<section id="services" class="section dark reveal">
   <div class="container">
       <h2 class="center">Layanan Profesional Kami</h2>
-      <p class="center" style="max-width:700px;margin:20px auto;">
+      <p class="center section-subtitle">
           Kami menyediakan layanan konsultasi yang dirancang untuk memberikan
           perlindungan hukum maksimal serta strategi bisnis yang adaptif terhadap
           perubahan regulasi dan dinamika pasar.
@@ -134,7 +135,7 @@
       </div>
   </div>
 </section>
-<section class="trust-section">
+<section class="trust-section reveal">
   <div class="container">
       <div class="section-header">
           <h2>Mengapa Klien Mempercayai Kami</h2>
@@ -168,8 +169,138 @@
   </div>
 </section>
 
+<section class="insight-section reveal">
+  <div class="container">
+      <div class="section-header">
+          <h2>Insight yang Membuat Kami Berbeda</h2>
+          <p>
+              Pendekatan kami bukan hanya legal formalitas, tapi strategi hukum yang benar-benar bisa dieksekusi.
+          </p>
+      </div>
 
-<section id="contact" class="section center">
+      <div class="insight-grid">
+          <div class="insight-card">
+              <h3>95%</h3>
+              <p>Tingkat kepuasan klien terhadap sesi konsultasi awal.</p>
+          </div>
+          <div class="insight-card">
+              <h3>24 Jam</h3>
+              <p>Rata-rata waktu respons untuk pertanyaan prioritas.</p>
+          </div>
+          <div class="insight-card">
+              <h3>300+</h3>
+              <p>Dokumen legal dan kontrak strategis yang telah ditangani.</p>
+          </div>
+          <div class="insight-card">
+              <h3>4 Tahap</h3>
+              <p>Metode kerja terstruktur dari audit hingga monitoring.</p>
+          </div>
+      </div>
+
+      <div class="process-grid">
+          <div class="process-item">
+              <span>01</span>
+              <h4>Konsultasi Awal</h4>
+              <p>Memetakan urgensi, risiko, dan tujuan klien secara cepat.</p>
+          </div>
+          <div class="process-item">
+              <span>02</span>
+              <h4>Analisis Dokumen</h4>
+              <p>Menelaah kontrak dan legal posture untuk menemukan celah risiko.</p>
+          </div>
+          <div class="process-item">
+              <span>03</span>
+              <h4>Eksekusi Strategi</h4>
+              <p>Implementasi solusi hukum yang realistis dan terukur.</p>
+          </div>
+      </div>
+  </div>
+</section>
+
+<section id="location" class="location-section reveal">
+  <div class="container location-wrapper">
+      <div class="map-embed">
+          <iframe
+            src="https://www.google.com/maps?q=Monumen+Nasional+Jakarta&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Lokasi Arkana Legal">
+          </iframe>
+      </div>
+
+      <div class="location-info">
+          <h2>Kunjungi Kantor Kami</h2>
+          <p>Lokasi konsultasi representatif dengan akses strategis dan suasana privat untuk diskusi bisnis penting Anda.</p>
+
+          <div class="location-list">
+              <p><strong>Alamat:</strong> Jl. Medan Merdeka Barat No. 12, Jakarta Pusat</p>
+              <p><strong>Jam Operasional:</strong> Senin - Jumat, 09.00 - 18.00 WIB</p>
+              <p><strong>Sesi Eksekutif:</strong> By appointment pada hari Sabtu</p>
+          </div>
+
+          <a href="https://maps.google.com/?q=Monumen+Nasional+Jakarta" target="_blank" rel="noopener noreferrer" class="btn location-btn">
+              Buka di Google Maps
+          </a>
+      </div>
+  </div>
+</section>
+
+<section id="booking" class="booking-section reveal">
+  <div class="container booking-wrapper">
+      <div class="booking-intro">
+          <h2>Booking Konsultasi</h2>
+          <p>
+              Pilih jadwal dan jenis layanan yang Anda butuhkan.
+              Tim kami akan menghubungi Anda untuk konfirmasi sesi.
+          </p>
+          <ul class="booking-points">
+              <li>Durasi sesi awal 30-45 menit</li>
+              <li>Konfirmasi maksimal 1x24 jam kerja</li>
+              <li>Data Anda dijaga dengan standar profesional</li>
+          </ul>
+      </div>
+
+      <form id="booking-form" class="booking-form">
+          <div class="form-grid">
+              <label>
+                  Nama Lengkap
+                  <input type="text" name="name" placeholder="Masukkan nama" required>
+              </label>
+              <label>
+                  Nomor WhatsApp
+                  <input type="tel" name="phone" placeholder="08xxxxxxxxxx" required>
+              </label>
+              <label>
+                  Tanggal
+                  <input type="date" name="date" required>
+              </label>
+              <label>
+                  Jam
+                  <input type="time" name="time" required>
+              </label>
+              <label class="full-width">
+                  Layanan
+                  <select name="service" required>
+                      <option value="">Pilih layanan</option>
+                      <option value="Konsultasi Hukum Korporasi">Konsultasi Hukum Korporasi</option>
+                      <option value="Konsultasi Pajak & Kepatuhan">Konsultasi Pajak & Kepatuhan</option>
+                      <option value="Strategi & Pengembangan Bisnis">Strategi & Pengembangan Bisnis</option>
+                  </select>
+              </label>
+              <label class="full-width">
+                  Kebutuhan Singkat
+                  <textarea name="note" rows="4" placeholder="Ceritakan kebutuhan Anda secara singkat" required></textarea>
+              </label>
+          </div>
+
+          <button type="submit" class="booking-submit">Kirim Booking</button>
+          <p id="booking-status" class="booking-status" aria-live="polite"></p>
+      </form>
+  </div>
+</section>
+
+
+<section id="contact" class="section center reveal">
   <div class="container">
       <h2>Butuh Konsultasi?</h2>
       <p>Hubungi kami sekarang untuk solusi profesional.</p>
