@@ -1,37 +1,52 @@
-'use client'
+'use client';
 
-import { useState } from 'react'
-import Link from 'next/link'
+import { useState } from 'react';
+import Link from 'next/link';
+import { Menu, X } from 'lucide-react';
 
 export default function Header() {
-  const [navOpen, setNavOpen] = useState(false)
+  const [navOpen, setNavOpen] = useState(false);
 
-  const handleNavLink = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    setNavOpen(false)
-  }
+  const navItems = [
+    { label: 'Tentang', href: '#about' },
+    { label: 'Layanan', href: '#services' },
+    { label: 'Mengapa Kami', href: '#trust' },
+    { label: 'Lokasi', href: '#location' },
+    { label: 'Booking', href: '#booking' },
+  ];
+
+  const handleNavLink = () => {
+    setNavOpen(false);
+  };
 
   return (
     <header className="header">
-      <div className="container header-wrapper">
-        <div className="logo">
-          ARKANA<span>LEGAL</span>
-        </div>
+      <div className="header-content">
+        <Link href="/" className="logo">
+          <span>⚖️</span> Arkana Legal
+        </Link>
 
-        <div className="menu-toggle" onClick={() => setNavOpen(!navOpen)}>
-          ☰
-        </div>
-
-        <nav className={`nav ${navOpen ? 'active' : ''}`} id="nav">
-          <a href="#about" onClick={handleNavLink}>Tentang</a>
-          <a href="#services" onClick={handleNavLink}>Layanan</a>
-          <a href="#location" onClick={handleNavLink}>Lokasi</a>
-          <a href="#booking" onClick={handleNavLink}>Booking</a>
+        <nav className={`nav ${navOpen ? 'active' : ''}`}>
+          {navItems.map((item) => (
+            <a
+              key={item.label}
+              href={item.href}
+              className="nav-link"
+              onClick={handleNavLink}
+            >
+              {item.label}
+            </a>
+          ))}
         </nav>
 
-        <a href="#booking" className="header-cta" onClick={handleNavLink}>
-          Konsultasi
-        </a>
+        <button
+          className="nav-toggle"
+          onClick={() => setNavOpen(!navOpen)}
+          aria-label="Toggle menu"
+        >
+          {navOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
       </div>
     </header>
-  )
+  );
 }

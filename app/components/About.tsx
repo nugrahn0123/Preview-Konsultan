@@ -1,35 +1,55 @@
-'use client'
+'use client';
+
+import { motion } from 'framer-motion';
+import { CheckCircle2 } from 'lucide-react';
 
 export default function About() {
+  const benefits = [
+    'Pengalaman 15+ tahun di industri hukum',
+    'Tim profesional bersertifikat internasional',
+    'Solusi hukum yang inovatif dan efektif',
+    'Pendekatan strategis untuk setiap kasus',
+    'Respons cepat dan dukungan berkelanjutan',
+    'Tarif yang kompetitif dan transparan',
+  ];
+
   return (
-    <section id="about" className="about-section reveal">
-      <div className="container about-wrapper">
-        <div className="about-text">
-          <h2>Tentang Arkana Legal Consulting</h2>
-
+    <section className="about" id="about">
+      <div className="about-grid">
+        <motion.div
+          className="about-content"
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <h2>Mengapa Memilih Arkana Legal?</h2>
           <p>
-            Arkana Legal Consulting adalah firma konsultan profesional
-            yang berfokus pada perlindungan hukum dan strategi bisnis
-            untuk perusahaan serta individu.
+            Arkana Legal Consulting adalah mitra terpercaya untuk kebutuhan hukum dan strategi bisnis Anda. Kami berkomitmen memberikan solusi yang inovatif, efektif, dan disesuaikan dengan kebutuhan klien.
           </p>
+          <ul>
+            {benefits.map((benefit, index) => (
+              <li key={index}>
+                <CheckCircle2 size={20} className="inline mr-2" />
+                {benefit}
+              </li>
+            ))}
+          </ul>
+        </motion.div>
 
-          <p>
-            Dengan pengalaman lebih dari satu dekade, kami membantu klien
-            dalam penyusunan perjanjian, mitigasi risiko, serta memastikan
-            kepatuhan terhadap regulasi yang berlaku.
-          </p>
-
-          <div className="about-highlight">
-            <span>150+ Klien Ditangani</span>
-            <span>10+ Tahun Pengalaman</span>
-            <span>Profesional & Terpercaya</span>
-          </div>
-        </div>
-
-        <div className="about-image">
-          <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f" alt="Legal Statue" />
-        </div>
+        <motion.div
+          className="about-image"
+          initial={{ opacity: 0, x: 30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <img
+            src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&q=80"
+            alt="Tentang Arkana Legal"
+          />
+        </motion.div>
       </div>
     </section>
-  )
+  );
 }
