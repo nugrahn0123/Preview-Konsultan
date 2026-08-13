@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight, Scale, Users, Award, ShieldCheck } from 'lucide-react';
+import { ArrowRight, Users, Award, ShieldCheck } from 'lucide-react';
 
 export default function Hero() {
   const containerVariants = {
@@ -30,34 +30,8 @@ export default function Hero() {
     { icon: ShieldCheck, value: '98%', label: 'Tingkat Kepuasan' },
   ];
 
-  const floatingIcons = [
-    { icon: Scale, top: '15%', left: '8%', delay: 0 },
-    { icon: ShieldCheck, top: '65%', left: '5%', delay: 0.5 },
-    { icon: Award, top: '25%', left: '88%', delay: 1 },
-    { icon: Users, top: '70%', left: '90%', delay: 1.5 },
-  ];
-
   return (
     <section className="hero">
-      {floatingIcons.map((item, index) => {
-        const Icon = item.icon;
-        return (
-          <motion.div
-            key={index}
-            className="hero-floating-icon"
-            style={{ top: item.top, left: item.left }}
-            initial={{ opacity: 0, y: 0 }}
-            animate={{ opacity: 1, y: [0, -15, 0] }}
-            transition={{
-              opacity: { duration: 1, delay: item.delay },
-              y: { duration: 4, repeat: Infinity, ease: 'easeInOut', delay: item.delay },
-            }}
-          >
-            <Icon size={28} />
-          </motion.div>
-        );
-      })}
-
       <motion.div
         className="hero-content"
         variants={containerVariants}
