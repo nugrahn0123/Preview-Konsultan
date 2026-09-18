@@ -26,7 +26,7 @@ export default function Header() {
           <span>⚖️</span> Arkana Legal
         </Link>
 
-        <nav className={`nav ${navOpen ? 'active' : ''}`}>
+        <nav id="primary-nav" className={`nav ${navOpen ? 'active' : ''}`}>
           {navItems.map((item) => (
             <a
               key={item.label}
@@ -42,7 +42,9 @@ export default function Header() {
         <button
           className="nav-toggle"
           onClick={() => setNavOpen(!navOpen)}
-          aria-label="Toggle menu"
+          aria-label={navOpen ? 'Tutup menu' : 'Buka menu'}
+          aria-expanded={navOpen}
+          aria-controls="primary-nav"
         >
           {navOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
