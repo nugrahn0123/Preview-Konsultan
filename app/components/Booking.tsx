@@ -1,10 +1,11 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Send } from 'lucide-react';
 
 export default function Booking() {
+  const [minimumDate, setMinimumDate] = useState('');
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -15,6 +16,12 @@ export default function Booking() {
   });
   const [status, setStatus] = useState({ message: '', isError: false });
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  useEffect(() => {
+    const localDate = new Date();
+    localDate.setMinutes(localDate.getMinutes() - localDate.getTimezoneOffset());
+    setMinimumDate(localDate.toISOString().slice(0, 10));
+  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -116,6 +123,7 @@ export default function Booking() {
               id="booking-date"
               type="date"
               name="date"
+              min={minimumDate}
               className="form-input"
               value={formData.date}
               onChange={handleChange}
