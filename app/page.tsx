@@ -17,15 +17,20 @@ export default function Home() {
 
   return (
     <>
+      <a href="#main-content" className="skip-link">
+        Lewati ke konten utama
+      </a>
       <Header />
-      <Hero />
-      <About />
-      <Services />
-      <Trust />
-      <Insight />
-      <Location />
-      <Booking />
-      <Contact />
+      <main id="main-content">
+        <Hero />
+        <About />
+        <Services />
+        <Trust />
+        <Insight />
+        <Location />
+        <Booking />
+        <Contact />
+      </main>
       <Footer />
     </>
   )
