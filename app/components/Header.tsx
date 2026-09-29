@@ -1,11 +1,13 @@
 'use client';
 
 import { useState } from 'react';
+import { useRef } from 'react';
 import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
 
 export default function Header() {
   const [navOpen, setNavOpen] = useState(false);
+  const navToggleRef = useRef<HTMLButtonElement>(null);
 
   const navItems = [
     { label: 'Tentang', href: '#about' },
@@ -26,7 +28,16 @@ export default function Header() {
           <span>⚖️</span> Arkana Legal
         </Link>
 
-        <nav id="primary-nav" className={`nav ${navOpen ? 'active' : ''}`}>
+        <nav
+          id="primary-nav"
+          className={`nav ${navOpen ? 'active' : ''}`}
+          onKeyDown={(event) => {
+            if (event.key === 'Escape') {
+              setNavOpen(false);
+              navToggleRef.current?.focus();
+            }
+          }}
+        >
           {navItems.map((item) => (
             <a
               key={item.label}
@@ -40,6 +51,8 @@ export default function Header() {
         </nav>
 
         <button
+          ref={navToggleRef}
+          type="button"
           className="nav-toggle"
           onClick={() => setNavOpen(!navOpen)}
           aria-label={navOpen ? 'Tutup menu' : 'Buka menu'}
