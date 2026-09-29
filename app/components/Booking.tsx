@@ -86,6 +86,7 @@ export default function Booking() {
             id="booking-name"
             type="text"
             name="name"
+            autoComplete="name"
             className="form-input"
             placeholder="Masukkan nama Anda"
             value={formData.name}
@@ -101,6 +102,7 @@ export default function Booking() {
               id="booking-phone"
               type="tel"
               name="phone"
+              autoComplete="tel"
               className="form-input"
               placeholder="08xxxxxxxxxx"
               value={formData.phone}
