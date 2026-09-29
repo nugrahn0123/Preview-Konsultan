@@ -81,8 +81,9 @@ export default function Booking() {
         viewport={{ once: true }}
       >
         <motion.div className="form-group" variants={itemVariants}>
-          <label className="form-label">Nama Lengkap</label>
+          <label className="form-label" htmlFor="booking-name">Nama Lengkap</label>
           <input
+            id="booking-name"
             type="text"
             name="name"
             className="form-input"
@@ -95,8 +96,9 @@ export default function Booking() {
 
         <motion.div className="form-grid" variants={itemVariants}>
           <div className="form-group">
-            <label className="form-label">Nomor WhatsApp</label>
+            <label className="form-label" htmlFor="booking-phone">Nomor WhatsApp</label>
             <input
+              id="booking-phone"
               type="tel"
               name="phone"
               className="form-input"
@@ -107,8 +109,9 @@ export default function Booking() {
             />
           </div>
           <div className="form-group">
-            <label className="form-label">Tanggal</label>
+            <label className="form-label" htmlFor="booking-date">Tanggal</label>
             <input
+              id="booking-date"
               type="date"
               name="date"
               className="form-input"
@@ -121,8 +124,9 @@ export default function Booking() {
 
         <motion.div className="form-grid" variants={itemVariants}>
           <div className="form-group">
-            <label className="form-label">Jam</label>
+            <label className="form-label" htmlFor="booking-time">Jam</label>
             <input
+              id="booking-time"
               type="time"
               name="time"
               className="form-input"
@@ -132,8 +136,9 @@ export default function Booking() {
             />
           </div>
           <div className="form-group">
-            <label className="form-label">Layanan</label>
+            <label className="form-label" htmlFor="booking-service">Layanan</label>
             <select
+              id="booking-service"
               name="service"
               className="form-select"
               value={formData.service}
@@ -149,8 +154,9 @@ export default function Booking() {
         </motion.div>
 
         <motion.div className="form-group" variants={itemVariants}>
-          <label className="form-label">Kebutuhan Singkat</label>
+          <label className="form-label" htmlFor="booking-note">Kebutuhan Singkat</label>
           <textarea
+            id="booking-note"
             name="note"
             className="form-textarea"
             placeholder="Ceritakan kebutuhan Anda secara singkat"
