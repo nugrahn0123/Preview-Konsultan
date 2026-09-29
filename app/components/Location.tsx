@@ -6,8 +6,8 @@ import { MapPin, Phone, Mail, Clock, Globe } from 'lucide-react';
 export default function Location() {
   const contactInfo = [
     { icon: MapPin, label: 'Alamat', value: 'Jl. Medan Merdeka Barat No. 12, Jakarta Pusat' },
-    { icon: Phone, label: 'Telepon', value: '+62 21 9876 5432' },
-    { icon: Mail, label: 'Email', value: 'konsultasi@arkanalegal.co.id' },
+    { icon: Phone, label: 'Telepon', value: '+62 21 9876 5432', href: 'tel:+622198765432' },
+    { icon: Mail, label: 'Email', value: 'konsultasi@arkanalegal.co.id', href: 'mailto:konsultasi@arkanalegal.co.id' },
     { icon: Clock, label: 'Jam Operasional', value: 'Senin - Jumat, 09:00 - 18:00' },
   ];
 
@@ -48,7 +48,7 @@ export default function Location() {
                 </div>
                 <div className="info-item-content">
                   <h4>{info.label}</h4>
-                  <p>{info.value}</p>
+                  {info.href ? <a href={info.href}>{info.value}</a> : <p>{info.value}</p>}
                 </div>
               </div>
             );

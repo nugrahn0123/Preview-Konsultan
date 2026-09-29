@@ -672,6 +672,17 @@ section {
   color: var(--text-light);
 }
 
+.info-item-content a {
+  color: var(--text-light);
+  font-size: 0.875rem;
+  text-decoration: none;
+}
+
+.info-item-content a:hover {
+  color: var(--primary-blue);
+  text-decoration: underline;
+}
+
 /* Booking Section */
 .booking {
   background: var(--surface);
