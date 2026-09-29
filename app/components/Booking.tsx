@@ -15,7 +15,6 @@ export default function Booking() {
     note: '',
   });
   const [status, setStatus] = useState({ message: '', isError: false });
-  const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
     const localDate = new Date();
@@ -38,18 +37,19 @@ export default function Booking() {
       return;
     }
 
-    setIsSubmitting(true);
-
     const message = `Halo Arkana Legal, saya ingin booking konsultasi.%0A%0ANama: ${encodeURIComponent(name)}%0AWhatsApp: ${encodeURIComponent(phone)}%0ATanggal: ${encodeURIComponent(date)}%0AJam: ${encodeURIComponent(time)}%0ALayanan: ${encodeURIComponent(service)}%0AKebutuhan: ${encodeURIComponent(note)}`;
     const whatsappUrl = `https://wa.me/6281234567890?text=${message}`;
+    const whatsappWindow = window.open(whatsappUrl, '_blank');
+
+    if (!whatsappWindow) {
+      setStatus({ message: 'WhatsApp tidak dapat dibuka. Izinkan pop-up browser lalu coba lagi.', isError: true });
+      return;
+    }
+
+    whatsappWindow.opener = null;
 
     setStatus({ message: 'Booking berhasil disiapkan. Anda akan diarahkan ke WhatsApp...', isError: false });
     setFormData({ name: '', phone: '', date: '', time: '', service: '', note: '' });
-
-    setTimeout(() => {
-      window.open(whatsappUrl, '_blank');
-      setIsSubmitting(false);
-    }, 500);
   };
 
   const containerVariants = {
@@ -179,10 +179,9 @@ export default function Booking() {
         <motion.button
           type="submit"
           className="btn btn-primary"
-          disabled={isSubmitting}
           variants={itemVariants}
         >
-          {isSubmitting ? 'Mengirim...' : 'Kirim Booking'}
+          Kirim Booking
           <Send size={20} />
         </motion.button>
 
