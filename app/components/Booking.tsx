@@ -178,6 +178,9 @@ export default function Booking() {
 
         <motion.div
           className={`form-status ${status.isError ? 'error' : 'success'}`}
+          role="status"
+          aria-live="polite"
+          aria-atomic="true"
           initial={{ opacity: 0 }}
           animate={{ opacity: status.message ? 1 : 0 }}
           transition={{ duration: 0.3 }}
